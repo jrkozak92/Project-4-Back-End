@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t6j$ptdwewj0wqs2n#d3+o$tgxv_&1%iaxst(^!rghw_4a$-x_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','git.heroku.com/protected-woodland-92722.git']
+ALLOWED_HOSTS = ['localhost','protected-woodland-92722.herokuapp.com']
 
 
 # Application definition
