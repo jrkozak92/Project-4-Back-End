@@ -14,10 +14,12 @@ class UserSerializer(serializers.ModelSerializer):
         password = make_password(validated_data['password'])
         )
         user.save()
+        # user will need to be modified here to remove the hashed password
         return user
 
     def update(self, instance, validated_data):
         user = User.objects.get(username=validated_data['username'])
         user.password = make_password(validated_data['password'])
         user.save()
+        # user will need to be modified here to remove the hashed password
         return user
