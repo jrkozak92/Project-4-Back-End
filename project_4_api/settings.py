@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-t6j$ptdwewj0wqs2n#d3+o$tgxv_&1%iaxst(^!rghw_4a$-x_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','git.heroku.com/protected-woodland-92722.git']
+ALLOWED_HOSTS = ['localhost','protected-woodland-92722.herokuapp.com']
 
 
 # Application definition
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost','git.heroku.com/protected-woodland-92722.git']
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'auth_api',
     'todo_api',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedMainifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -89,7 +90,7 @@ DATABASES = {
         'NAME': 'todo_api',
         'USER':'',
         'PASSWORD':'',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
     }
 }
 
@@ -129,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
