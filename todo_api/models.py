@@ -14,3 +14,4 @@ class Todo(models.Model):
         choices= todo_choices_list,
         default= 'todo'
     )
+    list_name = models.TextField(default='')

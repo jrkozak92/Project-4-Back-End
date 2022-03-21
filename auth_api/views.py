@@ -28,8 +28,22 @@ def check_login(request):
         if User.objects.filter(username=username):
             user = User.objects.get(username=username)
             if check_password(password, user.password):
-                return JsonResponse({'id': user.id, 'username': user.username,})
+                return JsonResponse({'id': user.id, 'username': user.username, 'password': user.password, 'list_names': user.list_names,})
             else:
                 return JsonResponse({})
+        else:
+            return JsonResponse({})
+
+def add_list(request):
+    if request.method == 'PUT':
+        jsonRequest = json.loads(request.body)
+        username = jsonRequest['username']
+        list_names = jsonRequest['list_names']
+
+        if User.objects.filter(username=username):
+            user = User.objects.get(username=username)
+            user.list_names = list_names
+            user.save()
+            return JsonResponse({'username': user.username, 'list_names': user.list_names})
         else:
             return JsonResponse({})
