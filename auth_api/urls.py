@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('api/user', views.UserList.as_view(), name="user_list"),
+    path('api/user/listupdate', csrf_exempt(views.add_list), name="add_list"),
     path('api/user/<int:pk>', views.UserDetail.as_view(), name="user_detail"),
     path('api/user/login', csrf_exempt(views.check_login), name="check_login")
 ]
