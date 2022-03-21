@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost','protected-woodland-92722.herokuapp.com']
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'auth_api',
     'todo_api',
     'django.contrib.admin',
     'django.contrib.auth',
